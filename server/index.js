@@ -38,10 +38,6 @@ connectDB()
 .catch( (err)=>console.log("MongoDB Connection Failed",err)
 )
 
-<<<<<<< HEAD
-
-=======
 app.use('/',userRoute);
 app.use('/',teamRoutes);
 app.use('/',eventRoutes)
->>>>>>> 8650b216410f20af75144cd548ab09d3b87fd3a4
