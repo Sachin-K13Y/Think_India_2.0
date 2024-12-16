@@ -18,7 +18,7 @@ const _dirname = path.resolve();
 
 app.use(
     cors({
-      origin: 'https://think-india-nitp.vercel.app',
+      origin: 'https://think-india-2-0.onrender.com',
       credentials: true,
     })
   );
