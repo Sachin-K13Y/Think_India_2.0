@@ -10,7 +10,7 @@ eventRoutes.post('/events/addevents',upload.single('image'),addEvent);
 eventRoutes.delete('/events/deleteevent/:id',deleteEvent);
 eventRoutes.put('/events/updateevent/:id',updateEvent);
 eventRoutes.get('/events/getevents',getEvents);
-eventRoutes.post('/events/addphoto',isAdmin,upload.single('image'),AddPhoto);
+eventRoutes.post('/events/addphoto',upload.single('image'),AddPhoto);
 eventRoutes.get('/events/getphoto',getPhoto);
 export default eventRoutes
 
