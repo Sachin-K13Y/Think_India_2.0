@@ -14,7 +14,7 @@ const Events = () => {
         setEventData(response.data.events);
       })
       .catch((err)=>
-        // console.log(err)
+         console.log(err)
     )
     },[])
   return (
