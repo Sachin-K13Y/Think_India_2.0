@@ -17,6 +17,7 @@ import UpdateEventPage from './components/UpdateEvent';
 import DeleteEventPage from './components/DeleteEvent';
 import AddEventPage from './components/AddEvent';
 import AddPhoto from './components/AddPhoto';
+import SignupPage from './pages/SignUp';
 
 
 
@@ -30,6 +31,7 @@ const App = () => {
                 <Route path="/teams" element={<Teams />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
                 <Route path="/admin" element={<AdminLayout />}>
 
                 <Route path='addmember' element={<AddMemberLayout/>}/>
