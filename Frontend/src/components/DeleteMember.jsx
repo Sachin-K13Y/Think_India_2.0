@@ -19,7 +19,7 @@ const DeleteMemberLayout = () => {
 
         try {
             const response = await axiosInstance.delete(`/team/deletemember/${memberId}`);
-            console.log(response.data);
+            // console.log(response.data);
             if (response.status === 200) {
                 setMessage('Member deleted successfully.');
                 setMemberId(''); 

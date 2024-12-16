@@ -14,7 +14,7 @@ import axiosInstance from '../services'
 
 const Teams = () => {
     const [teamData,setTeamData] = useState([])
-    console.log(teamData);
+    // console.log(teamData);
     useEffect(() => {
     
         Aos.init({duration:1000});
@@ -24,7 +24,7 @@ const Teams = () => {
             setTeamData(response.data.members);
         })
         .catch((err)=>{
-            console.log("Error Fetching team data:",err);
+            // console.log("Error Fetching team data:",err);
         })
       
         }

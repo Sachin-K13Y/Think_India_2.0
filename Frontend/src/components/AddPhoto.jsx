@@ -28,7 +28,7 @@ function AddPhoto() {
             'Content-Type': 'multipart/form-data',
         },
     });
-      console.log(response.data);
+      (response.data);
     } catch (error) {
       console.error("Error uploading file:", error);
     }

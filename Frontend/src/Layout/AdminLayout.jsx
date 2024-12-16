@@ -11,7 +11,7 @@ const AdminLayout =  () => {
         const checkAdmin = async () => {
             try {
                 const response = await axiosInstance.get('/user/isadmin', { withCredentials: true });
-                console.log(response.data);
+                // console.log(response.data);
                 if (response.data.Success==true) {
                     setIsAdmin(true);
                 } else {

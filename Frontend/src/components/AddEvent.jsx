@@ -18,7 +18,7 @@ const AddEventPage = () => {
             const response = await axiosInstance.post('/events/addevents', formData,{ headers: {
                 'Content-Type': 'multipart/form-data',
             },});
-            console.log(response.data);
+          
             if (response.status === 200) {
                 setMessage('Event added successfully');
                 setTitle('');

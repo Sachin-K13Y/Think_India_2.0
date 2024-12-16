@@ -22,7 +22,7 @@ const LoginPage = () => {
         try {
             console.log("Submitting:", data);
             const response = await axiosInstance.post('/user/login', data);
-            console.log("Login successful:", response.data);
+            // console.log("Login successful:", response.data);
 
             if(response.status === 200){
                 navigate('/admin');

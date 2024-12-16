@@ -7,14 +7,14 @@ const Events = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     
     const [eventData,setEventData] = useState([]);
-    console.log(eventData);
+    // console.log(eventData);
     useEffect(()=>{
       axiosInstance.get('/events/getevents')
       .then((response)=>{
         setEventData(response.data.events);
       })
       .catch((err)=>
-        console.log(err)
+        // console.log(err)
     )
     },[])
   return (

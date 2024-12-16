@@ -121,7 +121,7 @@ const ThinkIndiaNITP='https://media.licdn.com/dms/image/C4D0BAQGRneY6b4SAmQ/comp
       Aos.init({ duration: 1000 });
       axiosInstance.get('/events/getphoto')
       .then((response=>{
-        console.log(response.data.Photos);
+        // console.log(response.data.Photos);
         setGalleryImages(response.data.Photos);
         
       }))
