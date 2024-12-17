@@ -19,20 +19,27 @@ const LoginPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         try {
             console.log("Submitting:", data);
             const response = await axiosInstance.post('/user/login', data);
             // console.log("Login successful:", response.data);
-            setLoading(true);
+            
 
             if(response.status === 200){
                 navigate('/admin');
+               
+                toast.success("Login Succcessful!")
                 setLoading(false);
+            }
+            else{
+                toast.error("Login failed!!");
             }
         } catch (error) {
             console.error("Error during login:", error);
             setLoading(false);
+            toast.error("Login failed. Please try again!")
 
         }
     };
@@ -76,7 +83,7 @@ const LoginPage = () => {
                         type="submit"
                         className="w-full bg-[#F96D00] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#d85b00] transition"
                     >
-                        {loading?"loading...":"Submit"}
+                        {loading?"Loading...":"Submit"}
                     </button>
                 </form>
 
