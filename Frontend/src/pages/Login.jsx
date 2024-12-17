@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axiosInstance from '../services';
 import {useNavigate} from 'react-router-dom';
-
+import { toast } from 'react-toastify';
 const LoginPage = () => {
+    const [loading,setLoading] = useState(false);
     const navigate = useNavigate()
     const [data, setData] = useState({
         email: "",
@@ -23,12 +24,16 @@ const LoginPage = () => {
             console.log("Submitting:", data);
             const response = await axiosInstance.post('/user/login', data);
             // console.log("Login successful:", response.data);
+            setLoading(true);
 
             if(response.status === 200){
                 navigate('/admin');
+                setLoading(false);
             }
         } catch (error) {
             console.error("Error during login:", error);
+            setLoading(false);
+
         }
     };
 
@@ -71,7 +76,7 @@ const LoginPage = () => {
                         type="submit"
                         className="w-full bg-[#F96D00] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#d85b00] transition"
                     >
-                        Login
+                        {loading?"loading...":"Submit"}
                     </button>
                 </form>
 
