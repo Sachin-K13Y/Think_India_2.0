@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axiosInstance from '../services.js';
+import { toast } from 'react-toastify';
 
 const AddEventPage = () => {
+    const [loading,setLoading] = useState(false);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [image, setImage] = useState(null);
@@ -9,6 +11,7 @@ const AddEventPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         const formData = new FormData();
         formData.append('title', title);
         formData.append('description', description);
@@ -20,13 +23,17 @@ const AddEventPage = () => {
             },});
           
             if (response.status === 200) {
-                setMessage('Event added successfully');
+                
                 setTitle('');
                 setDescription('');
                 setImage(null);
+                setLoading(false)
+                toast.success("Event Added SuccessFully!");
             }
         } catch (error) {
-            setMessage('Failed to add event');
+            setLoading(false);
+           toast.error("Event Adding Failed!")
+
         }
     };
 
@@ -66,9 +73,9 @@ const AddEventPage = () => {
                     type="submit"
                     className="w-full bg-[#F96D00] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#d85b00] transition"
                 >
-                    Add Event
+                   { loading?"Adding":"Add Event"}
                 </button>
-                {message && <p className="mt-4 text-center text-sm text-red-600">{message}</p>}
+                
             </form>
         </div>
     );

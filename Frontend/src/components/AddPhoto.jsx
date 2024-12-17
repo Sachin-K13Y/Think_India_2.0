@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axiosInstance from '../services';
+import { toast } from 'react-toastify';
 
 function AddPhoto() {
+  const[loading,setLoading] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [file, setFile] = useState(null);
   const handleFileChange = (event) => {
@@ -16,11 +18,12 @@ function AddPhoto() {
     e.preventDefault();
 
 
-   
+   setLoading(true);
 
  
 
     try {
+
         const formData = new FormData();
         formData.append('image', file);
       const response = await axiosInstance.post('/events/addphoto',formData, {
@@ -28,9 +31,12 @@ function AddPhoto() {
             'Content-Type': 'multipart/form-data',
         },
     });
-      (response.data);
+      setLoading(false);
+      toast.success("Added Photo")
     } catch (error) {
+      setLoading(false);
       console.error("Error uploading file:", error);
+      toast.error("Adding Photo Failed")
     }
   };
 
@@ -58,7 +64,7 @@ function AddPhoto() {
           type="submit"
           className="mt-3 rounded-md border-2 border-gray-400 p-2 text-xl text-gray-400 hover:border-orange-200 hover:text-orange-400"
         >
-          Add
+          {loading?"Adding":Add}
         </button>
       </form>
     </div>
