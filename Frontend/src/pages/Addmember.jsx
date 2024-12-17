@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import axiosInstance from '../services';
+import { toast } from 'react-toastify';
 
 const AddMemberLayout = () => {
+    const [loading,setLoading] = useState(false);
+    const [image,setImage] = useState(null);
+    const [uploadedFile,setUploadedFile] = useState(null);
     const [member, setMember] = useState({
         name: '',
         branch: '',
@@ -14,12 +18,21 @@ const AddMemberLayout = () => {
         const { name, value, files } = e.target;
         setMember((prevState) => ({
             ...prevState,
-            [name]: files ? files[0] : value, // Handle file input separately
+            [name]: files ? files[0] : value,
         }));
+
+    
+
+
     };
+    const handleFileChange = (e)=>{
+        const image = e.target.files[0];
+        setUploadedFile(URL.createObjectURL(image));
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         try {
             const formData = new FormData();
@@ -36,10 +49,13 @@ const AddMemberLayout = () => {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-
+            setLoading(false);
+            toast.success("Member Added Successfully!");
             // console.log('Response:', response.data);
         } catch (error) {
+            setLoading(false);
             console.error('Error adding member:', error);
+            toast.error("Member Adding Failed!")
         }
     };
 
@@ -51,6 +67,12 @@ const AddMemberLayout = () => {
                 </h2>
                 <form onSubmit={handleSubmit}>
                     {/* Name Input */}
+                    <div className=' flex justify-center'>
+                   
+                        <img id='image' class="image" src={uploadedFile} className=' h-32'>
+
+                        </img>
+                    </div>
                     <div className="mb-4">
                         <label className="block text-sm font-semibold text-gray-700" htmlFor="name">
                             Full Name
@@ -120,7 +142,7 @@ const AddMemberLayout = () => {
                             id="image"
                             name="image"
                             className="mt-2 block w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F96D00]"
-                            onChange={handleChange} // Use onChange to handle file input
+                            onChange={handleFileChange} // Use onChange to handle file input
                             required
                         />
                     </div>
@@ -129,7 +151,7 @@ const AddMemberLayout = () => {
                         type="submit"
                         className="w-full bg-[#F96D00] text-white font-semibold py-2 px-4 rounded-lg hover:bg-[#d85b00] transition"
                     >
-                        Add Member
+                       {loading?"Adding...":"Add Memeber"}
                     </button>
                 </form>
             </div>
@@ -138,3 +160,4 @@ const AddMemberLayout = () => {
 };
 
 export default AddMemberLayout;
+    
