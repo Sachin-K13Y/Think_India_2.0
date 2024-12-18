@@ -64,7 +64,7 @@ function AddPhoto() {
           type="submit"
           className="mt-3 rounded-md border-2 border-gray-400 p-2 text-xl text-gray-400 hover:border-orange-200 hover:text-orange-400"
         >
-          {loading?"Adding":Add}
+          {loading?"Adding":"Add"}
         </button>
       </form>
     </div>
