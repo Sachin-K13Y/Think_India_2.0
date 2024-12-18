@@ -2,14 +2,17 @@ import Team from "../Models/team.model.js";
 
 export const addMember = async(req,res)=>{
     try{
-    const {name,branch,team,description} = req.body;
+    const {name,branch,team,description,instagram,linkedin,github} = req.body;
         const imageUrl = req.file?.path;
     const newMember = Team({
         name,
         branch,
         team,
         description,
-        imageUrl
+        imageUrl,
+        instagram,
+        linkedin,
+        github
     })
 
     await newMember.save();

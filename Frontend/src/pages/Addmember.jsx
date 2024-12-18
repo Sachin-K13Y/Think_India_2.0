@@ -21,14 +21,12 @@ const AddMemberLayout = () => {
             [name]: files ? files[0] : value,
         }));
 
-    
+        const image = e.target.files[0];
+        setUploadedFile(URL.createObjectURL(image));
 
 
     };
-    const handleFileChange = (e)=>{
-        const image = e.target.files[0];
-        setUploadedFile(URL.createObjectURL(image));
-    }
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -132,48 +130,6 @@ const AddMemberLayout = () => {
                             required
                         />
                     </div>
-                    <div className="mb-4">
-                        <label className="block text-sm font-semibold text-gray-700" htmlFor="instagram">
-                            Instagram
-                        </label>
-                        <input
-                            type="text"
-                            id="instagram"
-                            name="instagram"
-                            className="mt-2 block w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F96D00]"
-                            value={member.instagram}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-sm font-semibold text-gray-700" htmlFor="linkedin">
-                            Linkedin
-                        </label>
-                        <input
-                            type="text"
-                            id="linkedin"
-                            name="linkedin"
-                            className="mt-2 block w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F96D00]"
-                            value={member.linkedin}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label className="block text-sm font-semibold text-gray-700" htmlFor="github">
-                            Github
-                        </label>
-                        <input
-                            type="text"
-                            id="github"
-                            name="github"
-                            className="mt-2 block w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F96D00]"
-                            value={member.github}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
                     {/* Image Input */}
                     <div className="mb-4">
                         <label className="block text-sm font-semibold text-gray-700" htmlFor="image">
@@ -184,7 +140,7 @@ const AddMemberLayout = () => {
                             id="image"
                             name="image"
                             className="mt-2 block w-full px-4 py-2 text-gray-700 bg-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F96D00]"
-                            onChange={handleFileChange} // Use onChange to handle file input
+                            onChange={handleChange} // Use onChange to handle file input
                             required
                         />
                     </div>

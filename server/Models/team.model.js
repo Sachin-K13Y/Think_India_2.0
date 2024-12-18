@@ -18,7 +18,17 @@ const teamSchema = mongoose.Schema({
     },
     imageUrl:{
         type:String,
+    },
+    linkedin:{
+        type:String,
+    },
+    instagram:{
+        type:String,
+    },
+    github:{
+        type:String,
     }
+
 })
 
  const Team = mongoose.model('Team',teamSchema);
