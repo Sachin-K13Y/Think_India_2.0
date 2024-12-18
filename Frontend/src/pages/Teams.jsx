@@ -7,7 +7,7 @@ import axiosInstance from '../services';
 const Teams = () => {
   const [teamData, setTeamData] = useState([]);
   const teamCategories = [
-    { name: 'Office Bearers', filter: null },
+    { name: 'Office Bearers', filter: 'officebearer' },
     { name: 'Web Team', filter: 'webteam' },
     { name: 'Android Team', filter: 'androidteam' },
     { name: 'Technical Team', filter: 'technicalteam' },
