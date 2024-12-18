@@ -4,7 +4,7 @@ import 'aos/dist/aos.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect } from 'react'
 
-const TeamMember = ({name,imageUrl,branch,description,linkedin}) => {
+const TeamMember = ({name,imageUrl,branch,description,linkedin,github,instagram}) => {
 
   useEffect(() => {
     
@@ -23,8 +23,8 @@ const TeamMember = ({name,imageUrl,branch,description,linkedin}) => {
 
         <span className=' flex justify-center space-x-4'>
         <span className=' text-white'><a href={linkedin}><FontAwesomeIcon icon="fa-brands fa-linkedin" size='xl' /></a></span>
-        <span className=' text-white'><a href={linkedin}><FontAwesomeIcon icon="fa-brands fa-github" size='xl' /></a></span>
-        <span className=' text-white'><a href={linkedin}><FontAwesomeIcon icon="fa-brands fa-instagram" size='xl' style={{color: "#f4f5f5",}} /></a></span>
+        <span className=' text-white'><a href={github}><FontAwesomeIcon icon="fa-brands fa-github" size='xl' /></a></span>
+        <span className=' text-white'><a href={instagram}><FontAwesomeIcon icon="fa-brands fa-instagram" size='xl' style={{color: "#f4f5f5",}} /></a></span>
         </span>
         <p className=' text-white text-center '>Branch: {branch}</p>
 
