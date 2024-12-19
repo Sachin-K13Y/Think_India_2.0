@@ -34,7 +34,7 @@ const AdminLayout =  () => {
         <div className=' mt-[100px] min-h-screen  bg-[#222831] '>
             <h1 className=' text-[#F96D00] text-center py-4 text-[50px] font-semibold'>Admin Dashboard</h1>
             <nav>
-                <ul className=' flex justify-center gap-5'>
+            <ul className=' flex flex-col sm:flex-row gap-2'>
                     <li className=' text-center pb-4'>
                         <Link to="/admin/addmember"><button className=' border-4 text-white bg-[#F96D00] text-[30px] p-4 rounded-3xl '>Add Member</button></Link>
                     </li>
