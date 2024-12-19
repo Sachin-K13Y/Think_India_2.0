@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
+    
     return (
         <footer className="bg-[#222831] w-full">
             <div className="flex flex-col lg:flex-row py-8 px-6 md:px-12 lg:justify-between">
@@ -35,21 +35,11 @@ const Footer = () => {
                 <div className="mb-8 lg:mb-0 text-center lg:text-left">
                     <h1 className="text-white border-l-4 border-orange-400 px-2 mb-4">Important Links</h1>
                     <ul className="text-white space-y-2">
-                        <li className="hover:text-orange-400 cursor-pointer">
-                            <NavLink to="/events">Events</NavLink>
-                        </li>
-                        <li className="hover:text-orange-400 cursor-pointer">
-                            <NavLink to="/about">About Us</NavLink>
-                        </li>
-                        <li className="hover:text-orange-400 cursor-pointer">
-                            <NavLink to="/teams">Teams</NavLink>
-                        </li>
-                        <li className="hover:text-orange-400 cursor-pointer">
-                            <NavLink to="/">Home</NavLink>
-                        </li>
-                        <li className="hover:text-orange-400 cursor-pointer">
-                            <NavLink to="/gallery">Gallery</NavLink>
-                        </li>
+                        <li className="hover:text-orange-400 cursor-pointer">Events</li>
+                        <li className="hover:text-orange-400 cursor-pointer">About Us</li>
+                        <li className="hover:text-orange-400 cursor-pointer">Teams</li>
+                        <li className="hover:text-orange-400 cursor-pointer">Home</li>
+                        <li className="hover:text-orange-400 cursor-pointer">Gallery</li>
                     </ul>
                 </div>
 
