@@ -14,7 +14,7 @@ const TeamMember = ({name,imageUrl,branch,description,linkedin,github,instagram}
   , [])
  
   return (
-    <div  className=' bg-[#222831] w-[340px] h-[400px] rounded-lg p-3 text-center mx-10 my-5 transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 ' data-aos="fade-up"  >
+    <div  className=' bg-[#222831]  w-[340px] h-[400px] rounded-lg p-3 text-center transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 my-2 mx-3 ' data-aos="fade-up"  >
 
       
         <img src={imageUrl} width='180px' className=' rounded-full mx-auto' />
