@@ -141,14 +141,14 @@ const ThinkIndiaNITP='https://media.licdn.com/dms/image/C4D0BAQGRneY6b4SAmQ/comp
   return (
 
 
-        <div className=' mt-[100px]'>
+        <div className=' w-fit mt-[100px]'>
         
         {/****************Hero Section STARTS***************** */}
     <div className=' bg-gray-900 w-full h-screen flex justify-between p-10 items-center'>
 
     
         <div className=' animate-bounce-slow' data-aos="fade-up" >
-            <h1 className=' text-[#F2F2F2] text-[70px] text-center'>Welcome To<br/><span className=' text-[#F96D00] font-semibold'>Think India</span> X NITP <br/>Student Chapter</h1>
+            <h1 className=' text-[45px] text-[#F2F2F2] sm:text-[70px] text-center'>Welcome To<br/><span className=' text-[#F96D00] font-semibold'>Think India</span> X NITP <br/>Student Chapter</h1>
 
             <div className='flex justify-center'>
                 <button className=' bg-[#F96D00] text-white font-semibold py-2 px-4 rounded-3xl text-[30px]'>Join Us</button>
@@ -156,8 +156,8 @@ const ThinkIndiaNITP='https://media.licdn.com/dms/image/C4D0BAQGRneY6b4SAmQ/comp
 
         </div>
 
-        <div className=' mr-14'>
-            <img src={ThinkIndiaNITP} alt="ThinkIndialogo" width='400px' className=' rounded-full' />
+        <div className=' hidden sm:block  mr-14'>
+            <img src={ThinkIndiaNITP} alt="ThinkIndialogo" width='400px' className='rounded-full' />
         </div>
         
 
