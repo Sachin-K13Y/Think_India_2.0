@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const ThinkIndialogo = 'https://pbs.twimg.com/profile_images/1377154269086814209/fnxLite1_400x400.jpg';
-const NITPLogo = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjGZCkC2pgkCNIbk6yL2r1a4z0Irk6hOjhESQ&s';
+const NITPLogo = 'https://avatars.githubusercontent.com/u/60884679?s=280&v=4';
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
